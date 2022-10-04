@@ -11,7 +11,7 @@ export default function App() {
       completed: true,
     },
     {
-      id: "2",
+      id: "2", 
       title: "청소하기",
       completed: false,
     },
@@ -29,6 +29,7 @@ export default function App() {
         <div className="title">
           <h1>할 일 목록</h1>
         </div>
+        <h2 className="text-3xl font-normal text-red-500 underline">Hello World!</h2>
 
         <List todoData={todoData} setTodoData={setTodoData} />
         <Form value={value} setValue={setValue} setTodoData={setTodoData} />
