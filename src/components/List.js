@@ -1,23 +1,7 @@
 import React, { useState } from 'react';
 
 export default function List({ todoData, setTodoData }) {
-  const btnStyle = {
-    color: "#fff",
-    border: "none",
-    padding: "5px 9px",
-    borderRadius: "50%",
-    cursor: "pointer",
-    float: "right",
-  };
-
-  const getStyle = (completed) => {
-    return {
-      padding: "10px",
-      borderBottom: "1px #ccc dotted",
-      textDecoration: completed ? "line-through" : "none",
-    };
-  };
-
+  
   const changeCompleteCheck = (id) => {
     if (!id) {
       return;
@@ -51,7 +35,7 @@ export default function List({ todoData, setTodoData }) {
 
   return (
     todoData.map((v) => (
-      <div style={getStyle(v.completed)} key={v.id}>
+      <div  key={v.id}>
         <label>
           <input
             type="checkbox"
@@ -62,7 +46,6 @@ export default function List({ todoData, setTodoData }) {
         </label>
         <button
           type="button"
-          style={btnStyle}
           data-id={v.id}
           onClick={clickRemoveTodo}
         >

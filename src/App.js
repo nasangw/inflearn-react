@@ -24,12 +24,12 @@ export default function App() {
   const [value, setValue] = useState("");
 
   return (
-    <div className="container">
-      <div className="todoBlock">
-        <div className="title">
+    <div>
+      <div>
+        <div>
           <h1>할 일 목록</h1>
         </div>
-        <h2 className="text-3xl font-normal text-red-500 underline">Hello World!</h2>
+        <h2>Hello World!</h2>
 
         <List todoData={todoData} setTodoData={setTodoData} />
         <Form value={value} setValue={setValue} setTodoData={setTodoData} />
