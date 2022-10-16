@@ -36,21 +36,24 @@ export default function List({ todoData, setTodoData }) {
   return (
     todoData.map((v) => (
       <div  key={v.id}>
-        <label>
-          <input
-            type="checkbox"
-            defaultChecked={v.completed}
-            onChange={() => changeCompleteCheck(v.id)}
-          />
-          {v.title}
+        <label className='flex item-center justify-between w-full px-4 py-1 my-2 text-gray-600 bg-gray-100 border rounded'>
+          <span className='items-center'>
+            <input
+              type="checkbox"
+              defaultChecked={v.completed}
+              onChange={() => changeCompleteCheck(v.id)}
+            />
+            <em className={v.completed ? 'line-through' : undefined}>{v.title}</em>
+          </span>
+          <button
+            type="button"
+            className='items-center px-4 py-2 float-right'
+            data-id={v.id}
+            onClick={clickRemoveTodo}
+          >
+            X
+          </button>
         </label>
-        <button
-          type="button"
-          data-id={v.id}
-          onClick={clickRemoveTodo}
-        >
-          X
-        </button>
       </div>
     ))
   );
